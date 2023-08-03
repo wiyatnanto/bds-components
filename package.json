@@ -1,0 +1,42 @@
+{
+  "name": "bds",
+  "private": false,
+  "version": "1.0.0",
+  "description": "BRIN Design System Components",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build:ts": "tsc",
+    "build": "rm -fr dist && rollup -c"
+  },
+  "author": "Wiyatnanto",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "@babel/preset-react": "^7.22.5",
+    "@babel/preset-typescript": "^7.22.5",
+    "@rollup/plugin-commonjs": "^25.0.3",
+    "@rollup/plugin-image": "^3.0.2",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@rollup/plugin-typescript": "^11.1.2",
+    "@types/react": "^18.2.18",
+    "autoprefixer": "^10.4.14",
+    "react": "^18.2.0",
+    "rollup": "^3.27.0",
+    "rollup-plugin-dts": "^5.3.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "tailwindcss": "^3.3.3",
+    "tslib": "^2.6.1",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "postcss": "^8.4.27"
+  }
+}
