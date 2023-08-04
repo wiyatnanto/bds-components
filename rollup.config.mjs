@@ -31,14 +31,13 @@ export default [
       commonjs(),
       typescript({ tsconfig: './tsconfig.json' }),
       postcss({
-        config: {
-          path: './postcss.config.js'
-        },
         extensions: ['.css'],
+        extract: 'types/styles/bds.css',
         minimize: true,
         inject: {
           insertAt: 'top'
-        }
+        },
+        modules: true
       }),
       terser() // 👈 new line
     ]

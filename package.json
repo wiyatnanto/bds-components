@@ -1,5 +1,12 @@
 {
-  "name": "bds",
+  "name": "@wiyatnanto/bds-components",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/wiyatnanto"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wiyatnanto/bds-components.git"
+  },
   "private": false,
   "version": "1.0.0",
   "description": "BRIN Design System Components",
@@ -10,8 +17,10 @@
     "/dist"
   ],
   "scripts": {
-    "build:ts": "tsc",
-    "build": "rm -fr dist && rollup -c"
+    "build:style": "postcss src/styles/bds.css -o dist/bds.css",
+    "build": "rm -fr dist && NODE_ENV=production && rollup -c",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "author": "Wiyatnanto",
   "license": "ISC",
@@ -25,13 +34,24 @@
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@rollup/plugin-terser": "^0.4.3",
     "@rollup/plugin-typescript": "^11.1.2",
+    "@storybook/addon-essentials": "^7.2.0",
+    "@storybook/addon-interactions": "^7.2.0",
+    "@storybook/addon-links": "^7.2.1",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.2.0",
+    "@storybook/react": "^7.2.1",
+    "@storybook/react-vite": "^7.2.1",
+    "@storybook/testing-library": "^0.2.0",
     "@types/react": "^18.2.18",
     "autoprefixer": "^10.4.14",
+    "postcss-cli": "^10.1.0",
     "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "rollup": "^3.27.0",
     "rollup-plugin-dts": "^5.3.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
+    "storybook": "^7.2.1",
     "tailwindcss": "^3.3.3",
     "tslib": "^2.6.1",
     "typescript": "^5.1.6"
