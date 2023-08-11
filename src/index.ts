@@ -1,2 +1,3 @@
-import "./styles/bds.css";
+import "../bds.css";
 export * from "./components";
+export * from "./examples";
