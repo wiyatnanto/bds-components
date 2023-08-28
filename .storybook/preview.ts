@@ -1,4 +1,4 @@
-import "../style.css";
+import "../src/styles/main.css";
 import "swiper/css/bundle";
 import "swiper/css/effect-fade";
 
