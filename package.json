@@ -17,10 +17,10 @@
     "/dist"
   ],
   "scripts": {
-    "build:style": "postcss src/styles/bds.css -o dist/bds.css",
-    "build": "rm -fr dist && rollup -c",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build": "rm -fr dist && rollup -c && build:style",
+    "build:style": "postcss src/styles/main.css -o dist/main.css",
+    "build:storybook": "storybook build"
   },
   "author": "Wiyatnanto",
   "license": "ISC",

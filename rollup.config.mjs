@@ -7,7 +7,6 @@ import postcss from 'rollup-plugin-postcss'
 import terser from '@rollup/plugin-terser'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import { babel } from '@rollup/plugin-babel'
-
 export default [
   {
     input: 'src/index.ts',
@@ -27,23 +26,25 @@ export default [
       peerDepsExternal(),
       resolve(),
       nodeResolve({
-        extensions: ['.css']
+        extensions: ['.css', '.scss']
       }),
       commonjs(),
       typescript({ tsconfig: './tsconfig.json' }),
       postcss({
+        config: {
+          path: './postcss.config.js'
+        },
         extensions: ['.css'],
-        extract: 'types/styles/bds.css',
         minimize: true,
         inject: {
           insertAt: 'top'
         },
-        modules: true
+        extract: true
       }),
       terser(),
       babel({ babelHelpers: 'bundled' })
     ],
-    external: ['react', 'react-slick', '@types/react-slick', 'swiper']
+    external: ['react', 'react-slick', '@types/react-slick', 'swiper', '@wiyatnanto/dist/./path/to/main.css']
   },
   {
     input: 'dist/esm/types/index.d.ts',

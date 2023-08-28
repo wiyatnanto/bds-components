@@ -1,5 +1,6 @@
-// import "swiper/css/bundle";
-import "../bds.css";
+import "../style.css";
+import "swiper/css/bundle";
+import "swiper/css/effect-fade";
 
 import type { Preview } from "@storybook/react";
 

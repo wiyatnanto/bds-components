@@ -6,8 +6,6 @@ interface NavbarProps {
 }
 declare const Navbar: (props: NavbarProps) => React.JSX.Element;
 
-declare const Carousel: () => React.JSX.Element;
-
 declare const Slider: () => React.JSX.Element;
 
 interface ButtonProps {
@@ -35,4 +33,4 @@ declare const Homepage: (props: HomepageProps) => React.JSX.Element;
 
 declare const Home: () => React.JSX.Element;
 
-export { Badge, Button, Carousel, Home, Homepage, Input, Navbar, Slider };
+export { Badge, Button, Home, Homepage, Input, Navbar, Slider };
