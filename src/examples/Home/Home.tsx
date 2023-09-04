@@ -11,7 +11,7 @@ const Home = () => {
       navbar={<Navbar logo={'https://brin.go.id/images/logo.png'} />}
       slider={<Slider />}
     >
-      Testing
+      Testing Doang
     </Homepage>
   )
 }

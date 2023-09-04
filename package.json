@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "build": "rm -fr dist && rollup -c && build:style",
+    "build": "rm -fr dist && rollup -c",
     "build:style": "postcss src/styles/main.css -o dist/main.css",
     "build:storybook": "storybook build"
   },
@@ -61,6 +61,7 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
     "@types/react-slick": "^0.23.10",
     "million": "^2.5.10",
     "postcss": "^8.4.27",

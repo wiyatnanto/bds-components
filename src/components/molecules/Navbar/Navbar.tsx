@@ -1,4 +1,9 @@
 import * as React from 'react'
+import { Disclosure, Menu, Transition } from '@headlessui/react'
+
+function classNames (...classes) {
+  return classes.filter(Boolean).join(' ')
+}
 
 interface NavbarProps {
   logo: string;
@@ -7,116 +12,221 @@ interface NavbarProps {
 const Navbar = (props: NavbarProps) => {
   const { logo } = props
   return (
-    <>
-      <nav className='sticky top-0 bg-white shadow-md rounded-lg'>
-        <div className='mx-auto px-4'>
-          <div className='flex justify-between'>
-            <div className='flex space-x-7'>
-              <div>
-                <a href='#' className='flex items-center py-4 px-2'>
-                  <img src={logo} alt='Logo' className='h-auto w-[74px] mr-2' />
-                </a>
+    <Disclosure as='nav' className='bg-white shadow rounded-lg'>
+      {({ open }) => (
+        <>
+          <div className='mx-auto max-w-full px-4 sm:px-6 lg:px-8g'>
+            <div className='flex h-16 justify-between'>
+              <div className='flex'>
+                <div className='flex flex-shrink-0 items-center'>
+                  <img
+                    className='block h-8 w-auto lg:hidden'
+                    src={logo}
+                    alt='Your Company'
+                  />
+                  <img
+                    className='hidden h-8 w-auto lg:block'
+                    src={logo}
+                    alt='Your Company'
+                  />
+                </div>
+                <div className='hidden sm:ml-6 sm:flex sm:space-x-8'>
+                  {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
+                  <a
+                    href='#'
+                    className='inline-flex items-center border-b-2 border-red-500 px-1 pt-1 text-sm font-medium text-gray-900'
+                  >
+                    Dashboard
+                  </a>
+                  <a
+                    href='#'
+                    className='inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                  >
+                    Team
+                  </a>
+                  <a
+                    href='#'
+                    className='inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                  >
+                    Projects
+                  </a>
+                  <a
+                    href='#'
+                    className='inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                  >
+                    Calendar
+                  </a>
+                </div>
               </div>
-              <div className='hidden md:flex items-center space-x-1'>
-                <a
-                  href=''
-                  className='py-4 px-2 text-red-500 border-b-4 border-red-500'
+              <div className='hidden sm:ml-6 sm:flex sm:items-center'>
+                <button
+                  type='button'
+                  className='rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
                 >
-                  Home
-                </a>
-                <a
-                  href=''
-                  className='py-4 px-2 text-gray-500 hover:text-red-500 transition duration-300'
-                >
-                  Services
-                </a>
-                <a
-                  href=''
-                  className='py-4 px-2 text-gray-500 hover:text-red-500 transition duration-300'
-                >
-                  About
-                </a>
-                <a
-                  href=''
-                  className='py-4 px-2 text-gray-500 hover:text-red-500 transition duration-300'
-                >
-                  Contact Us
-                </a>
+                  <span className='sr-only'>View notifications</span>
+                  <div>Icon</div>
+                </button>
+
+                {/* Profile dropdown */}
+                <Menu as='div' className='relative ml-3'>
+                  <div>
+                    <Menu.Button className='flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'>
+                      <span className='sr-only'>Open user menu</span>
+                      <img
+                        className='h-8 w-8 rounded-full'
+                        src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+                        alt=''
+                      />
+                    </Menu.Button>
+                  </div>
+                  <Transition
+                    as={React.Fragment}
+                    enter='transition ease-out duration-200'
+                    enterFrom='transform opacity-0 scale-95'
+                    enterTo='transform opacity-100 scale-100'
+                    leave='transition ease-in duration-75'
+                    leaveFrom='transform opacity-100 scale-100'
+                    leaveTo='transform opacity-0 scale-95'
+                  >
+                    <Menu.Items className='absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            href='#'
+                            className={classNames(
+                              active ? 'bg-gray-100' : '',
+                              'block px-4 py-2 text-sm text-gray-700'
+                            )}
+                          >
+                            Your Profile
+                          </a>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            href='#'
+                            className={classNames(
+                              active ? 'bg-gray-100' : '',
+                              'block px-4 py-2 text-sm text-gray-700'
+                            )}
+                          >
+                            Settings
+                          </a>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            href='#'
+                            className={classNames(
+                              active ? 'bg-gray-100' : '',
+                              'block px-4 py-2 text-sm text-gray-700'
+                            )}
+                          >
+                            Sign out
+                          </a>
+                        )}
+                      </Menu.Item>
+                    </Menu.Items>
+                  </Transition>
+                </Menu>
               </div>
-            </div>
-            {/* Secondary Navbar items */}
-            <div className='hidden md:flex items-center space-x-3 '>
-              <a
-                href=''
-                className='py-2 px-2 font-medium text-gray-500 rounded hover:bg-red-500 hover:text-white transition duration-300'
-              >
-                Log In
-              </a>
-              <a
-                href=''
-                className='py-2 px-2 font-medium text-white bg-red-500 rounded hover:bg-red-400 transition duration-300'
-              >
-                Sign Up
-              </a>
-            </div>
-            {/* Mobile menu button */}
-            <div className='md:hidden flex items-center'>
-              <button className='outline-none mobile-menu-button'>
-                <svg
-                  className=' w-6 h-6 text-gray-500 hover:text-red-500 '
-                  x-show='!showMenu'
-                  fill='none'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
-                >
-                  <path d='M4 6h16M4 12h16M4 18h16' />
-                </svg>
-              </button>
+              <div className='-mr-2 flex items-center sm:hidden'>
+                {/* Mobile menu button */}
+                <Disclosure.Button className='inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>
+                  <span className='sr-only'>Open main menu</span>
+                  {open ? <div>Icon</div> : <div>Icon</div>}
+                </Disclosure.Button>
+              </div>
             </div>
           </div>
-        </div>
-        {/* mobile menu */}
-        <div className='hidden mobile-menu'>
-          <ul className=''>
-            <li className='active'>
-              <a
-                href='index.html'
-                className='block text-sm px-2 py-4 text-white bg-red-500'
+
+          <Disclosure.Panel className='sm:hidden'>
+            <div className='space-y-1 pb-3 pt-2'>
+              {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
+              <Disclosure.Button
+                as='a'
+                href='#'
+                className='block border-l-4 border-indigo-500 bg-indigo-50 py-2 pl-3 pr-4 text-base font-medium text-indigo-700'
               >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href='#services'
-                className='block text-sm px-2 py-4 hover:bg-red-500 transition duration-300'
+                Dashboard
+              </Disclosure.Button>
+              <Disclosure.Button
+                as='a'
+                href='#'
+                className='block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700'
               >
-                Services
-              </a>
-            </li>
-            <li>
-              <a
-                href='#about'
-                className='block text-sm px-2 py-4 hover:bg-red-500 transition duration-300'
+                Team
+              </Disclosure.Button>
+              <Disclosure.Button
+                as='a'
+                href='#'
+                className='block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700'
               >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                href='#contact'
-                className='block text-sm px-2 py-4 hover:bg-red-500 transition duration-300'
+                Projects
+              </Disclosure.Button>
+              <Disclosure.Button
+                as='a'
+                href='#'
+                className='block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700'
               >
-                Contact Us
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </>
+                Calendar
+              </Disclosure.Button>
+            </div>
+            <div className='border-t border-gray-200 pb-3 pt-4'>
+              <div className='flex items-center px-4'>
+                <div className='flex-shrink-0'>
+                  <img
+                    className='h-10 w-10 rounded-full'
+                    src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+                    alt=''
+                  />
+                </div>
+                <div className='ml-3'>
+                  <div className='text-base font-medium text-gray-800'>
+                    Tom Cook
+                  </div>
+                  <div className='text-sm font-medium text-gray-500'>
+                    tom@example.com
+                  </div>
+                </div>
+                <button
+                  type='button'
+                  className='ml-auto flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+                >
+                  <span className='sr-only'>View notifications</span>
+                  <div>Icon</div>
+                </button>
+              </div>
+              <div className='mt-3 space-y-1'>
+                <Disclosure.Button
+                  as='a'
+                  href='#'
+                  className='block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800'
+                >
+                  Your Profile
+                </Disclosure.Button>
+                <Disclosure.Button
+                  as='a'
+                  href='#'
+                  className='block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800'
+                >
+                  Settings
+                </Disclosure.Button>
+                <Disclosure.Button
+                  as='a'
+                  href='#'
+                  className='block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800'
+                >
+                  Sign out
+                </Disclosure.Button>
+              </div>
+            </div>
+          </Disclosure.Panel>
+        </>
+      )}
+    </Disclosure>
   )
 }
 
