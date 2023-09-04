@@ -44,7 +44,13 @@ export default [
       terser(),
       babel({ babelHelpers: 'bundled' })
     ],
-    external: ['react', 'react-slick', '@types/react-slick', 'swiper', '@wiyatnanto/dist/./path/to/main.css']
+    external: [
+      'react',
+      'react-slick',
+      '@types/react-slick',
+      'swiper',
+      '@wiyatnanto/dist/./path/to/main.css'
+    ]
   },
   {
     input: 'dist/esm/types/index.d.ts',

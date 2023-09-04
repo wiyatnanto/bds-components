@@ -6,18 +6,20 @@
 @import "swiper/css/effect-fade";
 
 /* react-slick */
-.slick-slider {
+/* .slick-slider {
 	@apply mt-[30px] mb-[50px] mx-auto border border-gray-400;
 }
+
 .slick-slider .slick-list {
 	@apply overflow-hidden m-0 p-0;
 }
 
 .slick-slider .slick-arrow.slick-prev {
-	@apply z-[10] absolute translate-y-1/2 top-[calc(50%_-_2.5rem)] left-2 !flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none;
+	@apply z-[10] absolute translate-y-1/2 top-[calc(50%_-_2.5rem)] left-2 !flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark: bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none;
 }
+
 .slick-slider .slick-arrow.slick-next {
-	@apply z-[10] absolute translate-y-1/2 top-[calc(50%_-_2.5rem)] right-2 !flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none;
+	@apply z-[10] absolute translate-y-1/2 top-[calc(50%_-_2.5rem)] right-2 !flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark: bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none;
 }
 
 .slick-slider .slick-list .slick-track .slick-slide {
@@ -28,9 +30,11 @@
 .slick-slider {
 	@apply relative block;
 }
+
 .slick-slider .slick-list {
 	@apply overflow-hidden m-0 p-0 h-full;
 }
+
 .slick-slider .slick-list .slick-track {
 	@apply relative block mx-auto left-0 top-0 h-full;
 }
@@ -39,26 +43,27 @@
 	@apply absolute bottom-[-25px] block w-full text-center m-0 p-0 ml-0;
 	list-style: none;
 }
+
 .slick-slider .slick-dots li,
 .slick-slider .slick-dots li button {
-	@apply text-[0] w-3 h-3 rounded-full bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800;
+	@apply text-[0] w-3 h-3 rounded-full bg-white/50 dark: bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800;
 }
 
 .slick-slider .slick-dots li {
 	@apply relative inline-block mx-[5px] my-0 p-0;
-}
+} */
 
 /* swiper */
-.swiper-slide {
+/* .swiper-slide {
 	@apply text-center text-lg flex justify-center items-center;
 }
 
 .swiper-button-prev {
-	@apply z-[10] !w-10 !h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none;
+	@apply z-[10] !w-10 !h-10 rounded-full bg-white/30 dark: bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none;
 }
 
 .swiper-button-next {
-	@apply z-[10] !w-10 !h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none;
+	@apply z-[10] !w-10 !h-10 rounded-full bg-white/30 dark: bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none;
 }
 
 .swiper-button-prev::after {
@@ -71,4 +76,4 @@
 
 .swiper-pagination-bullet-active {
 	@apply !bg-red-600;
-}
+} */
