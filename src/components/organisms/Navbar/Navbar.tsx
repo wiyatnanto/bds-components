@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 // import logox from '../../../logo.png'
 
-function classNames (...classes) {
+function classNames (...classes: (string | boolean)[]): string {
   return classes.filter(Boolean).join(' ')
 }
 

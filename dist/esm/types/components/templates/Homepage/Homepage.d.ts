@@ -3,6 +3,7 @@ interface HomepageProps {
     navbar: React.ReactNode;
     slider: React.ReactNode;
     children: React.ReactNode;
+    footer: React.ReactNode;
 }
 declare const Homepage: (props: HomepageProps) => React.JSX.Element;
 export default Homepage;

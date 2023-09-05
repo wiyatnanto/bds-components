@@ -1,9 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'react-loading-skeleton/dist/skeleton.css';
-/* @import "~wiper/css/bundle";
-@import "~swiper/css/effect-fade"; */
+
+@import "~swiper/css/bundle";
+@import "~swiper/css/effect-fade";
 
 /* react-slick */
 /* .slick-slider {
@@ -53,13 +53,12 @@
 	@apply relative inline-block mx-[5px] my-0 p-0;
 } */
 
-/* swiper */
 .swiper-slide {
 	@apply text-center text-lg flex justify-center items-center;
 }
 
 .swiper-button-prev {
-	@apply z-[10] !w-10 !h-10 rounded-full bg-white/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 dark:bg-gray-800/30 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none lg:!left-60 ;
+	@apply z-[10] !w-10 !h-10 rounded-full bg-white/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 dark:bg-gray-800/30 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none lg:!left-60;
 }
 
 .swiper-button-next {

@@ -1,11 +1,6 @@
 import * as React from 'react';
 import React__default from 'react';
 
-interface NavbarProps {
-    logo: string;
-}
-declare const Navbar: (props: NavbarProps) => React.JSX.Element;
-
 declare const Slider: () => React.JSX.Element;
 
 interface ButtonProps {
@@ -20,17 +15,28 @@ interface InputProps {
 declare const Input: (props: InputProps) => React.JSX.Element;
 
 interface BadgeProps {
-    children: React.ReactNode;
+    children: React__default.ReactNode;
 }
-declare const Badge: (props: BadgeProps) => React.JSX.Element;
+declare const Badge: (props: BadgeProps) => React__default.JSX.Element;
 
 interface HomepageProps {
     navbar: React.ReactNode;
     slider: React.ReactNode;
     children: React.ReactNode;
+    footer: React.ReactNode;
 }
 declare const Homepage: (props: HomepageProps) => React.JSX.Element;
 
-declare const Home: () => React.JSX.Element;
+interface NavbarProps {
+    logo?: string;
+}
+declare const Navbar: (props: NavbarProps) => React.JSX.Element;
 
-export { Badge, Button, Home, Homepage, Input, Navbar, Slider };
+interface FooterProps {
+    logo?: string;
+    companyName?: string;
+    navigation?: any;
+}
+declare const Footer: (props: FooterProps) => React.JSX.Element;
+
+export { Badge, Button, Footer, Homepage, Input, Navbar, Slider };
