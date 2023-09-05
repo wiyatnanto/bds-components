@@ -1,18 +1,22 @@
 import * as React from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
+// import logox from '../../../logo.png'
 
 function classNames (...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 interface NavbarProps {
-  logo: string;
+  logo?: string;
 }
 
 const Navbar = (props: NavbarProps) => {
   const { logo } = props
   return (
-    <Disclosure as='nav' className='bg-white shadow rounded-lg'>
+    <Disclosure
+      as='nav'
+      className='bg-white sm:border-b sm:border-gray-200 lg:shadow lg:rounded-lg lg:mx-4 lg:max-w-7xl'
+    >
       {({ open }) => (
         <>
           <div className='mx-auto max-w-full px-4 sm:px-6 lg:px-8g'>
