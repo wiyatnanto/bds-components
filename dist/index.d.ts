@@ -39,4 +39,6 @@ interface FooterProps {
 }
 declare const Footer: (props: FooterProps) => React.JSX.Element;
 
-export { Badge, Button, Footer, Homepage, Input, Navbar, Slider };
+declare const Home: () => React.JSX.Element;
+
+export { Badge, Button, Footer, Home, Homepage, Input, Navbar, Slider };

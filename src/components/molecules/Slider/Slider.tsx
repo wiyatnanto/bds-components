@@ -1,6 +1,4 @@
 import * as React from 'react'
-import 'swiper/css/bundle'
-import 'swiper/css/effect-fade'
 import {
   A11y,
   EffectFade,

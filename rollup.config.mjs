@@ -36,7 +36,7 @@ export default [
         config: {
           path: './postcss.config.js'
         },
-        extensions: ['.css'],
+        extensions: ['.css','.scss'],
         minimize: true,
         inject: {
           insertAt: 'top'
@@ -47,12 +47,19 @@ export default [
       babel({ babelHelpers: 'bundled' }),
       image()
     ],
-    external: ['react', 'react-slick', '@types/react-slick', 'swiper']
+    external: [
+      'react',
+      'react-slick',
+      '@types/react-slick',
+      'swiper',
+      'swiper/css/bundle',
+      'swiper/css/effect-fade'
+    ]
   },
   {
     input: 'dist/esm/types/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     plugins: [dts()],
-    external: [/\.(css|less|scss)$/]
+    external: [/\.(sc|sa|c)ss$/]
   }
 ]

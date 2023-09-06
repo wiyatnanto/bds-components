@@ -1,2 +1,3 @@
-import "./styles/main.css";
+import "./assets/css/main.css";
 export * from "./components";
+export * from "./pages";
