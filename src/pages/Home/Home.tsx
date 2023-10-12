@@ -9,7 +9,7 @@ import { Slider } from '../../components/molecules'
 const Home = () => {
   return (
     <Homepage
-      navbar={<Navbar logo={'logo'} />}
+      navbar={<Navbar />}
       slider={<Slider />}
       footer={
         <>

@@ -1,3 +1,9 @@
 export { default as Button } from "./Button";
 export { default as Input } from "./Input";
 export { default as Badge } from "./Badge";
+export { default as Image } from "./Image";
+export { default as Link } from "./Link";
+export { default as Heading } from "./Heading";
+export { default as Text } from "./Text";
+export { default as NavbarBrand } from "./NavbarBrand";
+export { default as Icon } from "./Icon";

@@ -11,7 +11,5 @@ export default meta
 type Story = StoryObj<typeof Button>
 
 export const Primary: Story = {
-  args: {
-    label: 'Coba Doang'
-  }
+  args: {}
 }

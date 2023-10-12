@@ -1,6 +1,3 @@
-import * as React from 'react';
-interface NavbarProps {
-    logo?: string;
-}
-declare const Navbar: (props: NavbarProps) => React.JSX.Element;
+import React from 'react';
+declare const Navbar: (props: any) => React.JSX.Element;
 export default Navbar;

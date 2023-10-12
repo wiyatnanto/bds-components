@@ -8,6 +8,8 @@ import terser from '@rollup/plugin-terser'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import { babel } from '@rollup/plugin-babel'
 import image from '@rollup/plugin-image'
+import copy from 'rollup-plugin-copy'
+import alias from 'rollup-plugin-alias'
 
 export default [
   {
@@ -36,16 +38,25 @@ export default [
         config: {
           path: './postcss.config.js'
         },
-        extensions: ['.css','.scss'],
+        extensions: ['.css', '.scss'],
         minimize: true,
         inject: {
           insertAt: 'top'
         },
         extract: true
       }),
+      copy({
+        targets: [
+          // { src: './src/assets/fonts/webfonts/*', dest: 'dist/webfonts/' },
+          // { src: './dist/cjs/index.css', dest: './index.css' }
+        ]
+      }),
       terser(),
       babel({ babelHelpers: 'bundled' }),
-      image()
+      image(),
+      alias({
+        entries: [{ find: 'index.css', replacement: './dist/cjs/index.css' }]
+      })
     ],
     external: [
       'react',

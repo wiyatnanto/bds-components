@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-// import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
-// import 'react-loading-skeleton/dist/skeleton.css'
+import { Icon } from '@/components/atoms'
 
 function classNames (...classes: (string | boolean)[]): string {
   return classes.filter(Boolean).join(' ')
@@ -14,7 +13,7 @@ interface FooterProps {
 const Footer = (props: FooterProps) => {
   const { logo, companyName, navigation } = props
   return (
-    <footer className='bg-red-600' aria-labelledby='footer-heading'>
+    <footer className='bg-gray-200'>
       <h2 id='footer-heading' className='sr-only'>
         Footer
       </h2>
@@ -22,7 +21,7 @@ const Footer = (props: FooterProps) => {
         <div className='xl:grid xl:grid-cols-3 xl:gap-8'>
           <div className='space-y-8'>
             <img className='h-10' src={logo} alt='Company name' />
-            <p className='text-sm leading-6 text-gray-300'>
+            <p className='leading-6 text-gray-600'>
               Making the world a better place through constructing elegant
               hierarchies.
             </p>
@@ -31,11 +30,11 @@ const Footer = (props: FooterProps) => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className='text-gray-300 hover:text-white'
+                  className='text-gray-600 hover:text-white'
                 >
                   <span className='sr-only'>{item.name}</span>
                   <div className='h-6 w-6' aria-hidden='true'>
-                    {item.icon}
+                    <Icon icon={item.icon} variant='fab' />
                   </div>
                 </a>
               ))}
@@ -44,7 +43,7 @@ const Footer = (props: FooterProps) => {
           <div className='mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0'>
             <div className='md:grid md:grid-cols-2 md:gap-8'>
               <div>
-                <h3 className='text-sm font-semibold leading-6 text-gray-300'>
+                <h3 className='font-semibold leading-6 text-gray-600'>
                   Solutions
                 </h3>
                 <ul role='list' className='mt-6 space-y-4'>
@@ -52,7 +51,7 @@ const Footer = (props: FooterProps) => {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className='text-sm leading-6 text-gray-300 hover:text-white'
+                        className='leading-6 text-gray-600 hover:text-white'
                       >
                         {item.name}
                       </a>
@@ -61,7 +60,7 @@ const Footer = (props: FooterProps) => {
                 </ul>
               </div>
               <div className='mt-10 md:mt-0'>
-                <h3 className='text-sm font-semibold leading-6 text-gray-300'>
+                <h3 className='font-semibold leading-6 text-gray-600'>
                   Support
                 </h3>
                 <ul role='list' className='mt-6 space-y-4'>
@@ -69,7 +68,7 @@ const Footer = (props: FooterProps) => {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className='text-sm leading-6 text-gray-300 hover:text-white'
+                        className='leading-6 text-gray-600 hover:text-white'
                       >
                         {item.name}
                       </a>
@@ -80,7 +79,7 @@ const Footer = (props: FooterProps) => {
             </div>
             <div className='md:grid md:grid-cols-2 md:gap-8'>
               <div>
-                <h3 className='text-sm font-semibold leading-6 text-gray-300'>
+                <h3 className='font-semibold leading-6 text-gray-600'>
                   Company
                 </h3>
                 <ul role='list' className='mt-6 space-y-4'>
@@ -88,7 +87,7 @@ const Footer = (props: FooterProps) => {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className='text-sm leading-6 text-gray-300 hover:text-white'
+                        className='leading-6 text-gray-600 hover:text-white'
                       >
                         {item.name}
                       </a>
@@ -97,7 +96,7 @@ const Footer = (props: FooterProps) => {
                 </ul>
               </div>
               <div className='mt-10 md:mt-0'>
-                <h3 className='text-sm font-semibold leading-6 text-gray-300'>
+                <h3 className='font-semibold leading-6 text-gray-600'>
                   Legal
                 </h3>
                 <ul role='list' className='mt-6 space-y-4'>
@@ -105,7 +104,7 @@ const Footer = (props: FooterProps) => {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className='text-sm leading-6 text-gray-300 hover:text-white'
+                        className='leading-6 text-gray-600 hover:text-white'
                       >
                         {item.name}
                       </a>
@@ -117,7 +116,7 @@ const Footer = (props: FooterProps) => {
           </div>
         </div>
         <div className='mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24'>
-          <p className='text-xs leading-5 text-gray-100'>
+          <p className='text-xs leading-5 text-gray-600'>
             &copy; {companyName}.
           </p>
         </div>
@@ -173,13 +172,13 @@ const Footer = (props: FooterProps) => {
 //             <div className='mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0'>
 //               <div className='md:grid md:grid-cols-2 md:gap-8'>
 //                 <div>
-//                   <h3 className='text-sm font-semibold leading-6 text-gray-300'>
+//                   <h3 className='font-semibold leading-6 text-gray-600'>
 //                     <Skeleton count={1} height={8} width={80} />
 //                   </h3>
 //                   <ul role='list' className='mt-6 space-y-4'></ul>
 //                 </div>
 //                 <div className='mt-10 md:mt-0'>
-//                   <h3 className='text-sm font-semibold leading-6 text-gray-300'>
+//                   <h3 className='font-semibold leading-6 text-gray-600'>
 //                     <Skeleton count={1} height={8} width={80} />
 //                   </h3>
 //                   <ul role='list' className='mt-6 space-y-4'></ul>
@@ -187,13 +186,13 @@ const Footer = (props: FooterProps) => {
 //               </div>
 //               <div className='md:grid md:grid-cols-2 md:gap-8'>
 //                 <div>
-//                   <h3 className='text-sm font-semibold leading-6 text-gray-300'>
+//                   <h3 className='font-semibold leading-6 text-gray-600'>
 //                     <Skeleton count={1} height={8} width={80} />
 //                   </h3>
 //                   <ul role='list' className='mt-6 space-y-4'></ul>
 //                 </div>
 //                 <div className='mt-10 md:mt-0'>
-//                   <h3 className='text-sm font-semibold leading-6 text-gray-300'>
+//                   <h3 className='font-semibold leading-6 text-gray-600'>
 //                     <Skeleton count={1} height={8} width={80} />
 //                   </h3>
 //                   <ul role='list' className='mt-6 space-y-4'></ul>

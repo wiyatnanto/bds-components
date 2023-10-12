@@ -18,8 +18,7 @@
   ],
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "build": "rm -fr dist && rollup -c",
-    "build:style": "postcss src/styles/main.css -o dist/main.css",
+    "build": "rollup -c && postcss dist/cjs/index.css -o main.css",
     "build:storybook": "storybook build"
   },
   "author": "Wiyatnanto",
@@ -62,11 +61,15 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
+    "@rollup/plugin-alias": "^5.0.1",
     "@types/react-slick": "^0.23.10",
     "million": "^2.5.10",
     "postcss": "^8.4.27",
     "react-loading-skeleton": "^3.3.1",
     "react-slick": "^0.29.0",
+    "rollup-plugin-alias": "^2.2.0",
+    "rollup-plugin-copy": "^3.5.0",
     "swiper": "^10.1.0"
   }
 }
