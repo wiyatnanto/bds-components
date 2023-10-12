@@ -47,8 +47,10 @@ export default [
       }),
       copy({
         targets: [
-          // { src: './src/assets/fonts/webfonts/*', dest: 'dist/webfonts/' },
-          // { src: './dist/cjs/index.css', dest: './index.css' }
+          {
+            src: './src/assets/webfonts/*',
+            dest: './dist/assets/webfonts/'
+          }
         ]
       }),
       terser(),
