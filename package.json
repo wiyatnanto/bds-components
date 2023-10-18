@@ -68,7 +68,6 @@
     "postcss": "^8.4.27",
     "react-loading-skeleton": "^3.3.1",
     "react-slick": "^0.29.0",
-    "rollup-plugin-alias": "^2.2.0",
     "rollup-plugin-copy": "^3.5.0",
     "swiper": "^10.1.0"
   }

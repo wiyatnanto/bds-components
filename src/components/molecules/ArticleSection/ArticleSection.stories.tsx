@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import CTASection from './ArticleSection'
+import ArticleSection from './ArticleSection'
 
-const meta: Meta<typeof CTASection> = {
-  title: 'Molecules/Section/CTASection',
-  component: CTASection
+const meta: Meta<typeof ArticleSection> = {
+  title: 'Molecules/Section/ArticleSection',
+  component: ArticleSection
 }
 
 export default meta
-type Story = StoryObj<typeof CTASection>
+type Story = StoryObj<typeof ArticleSection>
 
 export const Primary: Story = {
   args: {}

@@ -9,7 +9,6 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import { babel } from '@rollup/plugin-babel'
 import image from '@rollup/plugin-image'
 import copy from 'rollup-plugin-copy'
-import alias from 'rollup-plugin-alias'
 
 export default [
   {
@@ -55,10 +54,10 @@ export default [
       }),
       terser(),
       babel({ babelHelpers: 'bundled' }),
-      image(),
-      alias({
-        entries: [{ find: 'index.css', replacement: './dist/cjs/index.css' }]
-      })
+      image()
+      // alias({
+      //   entries: [{ find: 'index.css', replacement: './dist/cjs/index.css' }]
+      // })
     ],
     external: [
       'react',

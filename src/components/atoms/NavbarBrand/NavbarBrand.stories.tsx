@@ -11,7 +11,5 @@ export default meta
 type Story = StoryObj<typeof NavbarBrand>
 
 export const Primary: Story = {
-  args: {
-    src: 'level'
-  }
+  args: {}
 }
